@@ -133,6 +133,6 @@ const getBalance = async () => {
   console.log(balance.toString() / 10 ** 18)
 }
 
-getQuote(0.001, '0xbF0B2D77F5095a28a48C7e57BE99841434FbBB26')
+getQuote(0.001)
 // swapTokens()
 // getBalance()
