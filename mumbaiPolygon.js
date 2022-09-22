@@ -15,6 +15,13 @@ const tokenFrom = {
   decimals: 18,
 }
 
+// const tokenFrom = {
+//   symbol: 'WETH',
+//   address: '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
+//   name: 'Wrapped Ether',
+//   decimals: 18,
+// }
+
 const tokenTo = {
   name: 'Tether USD',
   address: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
@@ -118,6 +125,6 @@ const swapTokens = async (amount) => {
 }
 
 // swapTokens(25)
-getQuote(25)
+getQuote(0.006159)
 // getTokenToBalance()
 // getBalance()
