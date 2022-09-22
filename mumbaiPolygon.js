@@ -17,7 +17,7 @@ const tokenFrom = {
 
 const tokenTo = {
   symbol: 'USDT',
-  address: '0x94b008aa00579c1307b0ef2c499ad98a8ce58e58',
+  address: '0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9',
   name: 'Tether USD',
   decimals: 6,
 }
@@ -39,7 +39,7 @@ const getQuote = async (amountFrom) => {
       skipValidation: true,
     }
     const res = await axios.get(
-      `https://optimism.api.0x.org/swap/v1/quote?${qs.stringify(params)}`
+      `https://arbitrum.api.0x.org/swap/v1/quote?${qs.stringify(params)}`
     )
     const estimatedGasPrice = res.data.estimatedGas / 10 ** tokenTo.decimals
     const buyAmount = res.data.buyAmount / 10 ** tokenTo.decimals
