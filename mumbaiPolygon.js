@@ -10,7 +10,7 @@ const ZERO_EX_ADDRESS = '0xdef1c0ded9bec7f1a1670819833240f027b25eff'
 
 const tokenFrom = {
   name: 'MATIC',
-  address: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  address: '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
   symbol: 'WETH',
   decimals: 18,
 }
@@ -117,7 +117,7 @@ const swapTokens = async (amount) => {
   }
 }
 
-swapTokens(25)
-// getQuote(25)
+// swapTokens(25)
+getQuote(25)
 // getTokenToBalance()
 // getBalance()
