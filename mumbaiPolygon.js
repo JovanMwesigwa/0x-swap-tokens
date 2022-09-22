@@ -9,16 +9,16 @@ const walletAddress = process.env.WALLET_ADDRESS
 const ZERO_EX_ADDRESS = '0xdef1c0ded9bec7f1a1670819833240f027b25eff'
 
 const tokenFrom = {
-  name: 'MATIC',
+  symbol: 'ETH',
   address: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
-  symbol: 'WETH',
+  name: 'Ether',
   decimals: 18,
 }
 
 const tokenTo = {
-  name: 'Tether USD',
-  address: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
   symbol: 'USDT',
+  address: '0x94b008aa00579c1307b0ef2c499ad98a8ce58e58',
+  name: 'Tether USD',
   decimals: 6,
 }
 
@@ -39,13 +39,13 @@ const getQuote = async (amountFrom) => {
       skipValidation: true,
     }
     const res = await axios.get(
-      `https://polygon.api.0x.org/swap/v1/quote?${qs.stringify(params)}`
+      `https://optimism.api.0x.org/swap/v1/quote?${qs.stringify(params)}`
     )
     const estimatedGasPrice = res.data.estimatedGas / 10 ** tokenTo.decimals
     const buyAmount = res.data.buyAmount / 10 ** tokenTo.decimals
     // const buyAmount = res.data.buyAmount
     console.log(`You get: ${buyAmount} USDT`)
-    console.log(`Gas: ${estimatedGasPrice} DAI`)
+    console.log(`Gas: ${estimatedGasPrice} USD`)
     return res.data
   } catch (error) {
     console.log(error.response.data)
@@ -117,7 +117,7 @@ const swapTokens = async (amount) => {
   }
 }
 
-swapTokens(25)
-// getQuote(25)
+// swapTokens(25)
+getQuote(0.006159)
 // getTokenToBalance()
 // getBalance()
